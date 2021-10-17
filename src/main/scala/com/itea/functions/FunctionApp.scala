@@ -96,4 +96,44 @@ object FunctionApp extends App {
 
   println( toTuple(LocalDate.now) )
 
+  val fromTuple: (Int, Int, Int) => LocalDate = { (year, month, date) =>
+    LocalDate.of(year, month, date)
+  }
+
+  // Partially applied functions (частично примененные функции)
+  val fromTupleThisYear1: (Int, Int) => LocalDate = { (month, date) =>
+    fromTuple(LocalDate.now.getYear, month, date) // TODO:  пере используем здесь функцию 'fromTuple' ... в итоге функции порождают новые функции
+  }
+  // это тоже самое что и:
+  val fromTupleThisYear2: (Int, Int) => LocalDate = fromTuple(LocalDate.now.getYear, _, _)
+  println( "fromTupleThisYear = " + fromTupleThisYear2(2, 20) )
+  // а вот такая запись будет выглядеть более экономично
+//  val asArrow: Int => Int => LocalDate = // TODO: Haskell Curry  (функция которая вернет другую функцию)
+  val asArrow: Int => Int => Int => LocalDate  =  year => month => day => LocalDate.of (year, month, day)
+  println( "asArrow = " + asArrow(2021)(10)(17) )   // TODO: а вот так вызывается функция которая возвращает другую функцию  asArrow(2021)(10)(17)
+                                                    // asArrow = 2021-10-17
+
+  val thisYear: Int => Int => LocalDate = asArrow( LocalDate.now.getYear )
+  println( "thisYear = " + thisYear(10)(17) )       // TODO: а вот так вызывается функция которая возвращает другую функцию  thisYear(10)(17)
+                                                    // thisYear = 2021-10-17
+
+  val thisYearMonth: Int => LocalDate = asArrow(2021)(10)
+  println( "thisYearMonth = " + thisYearMonth(17) ) // TODO: а вот так вызывается функция которая возвращает другую функцию  thisYearMonth(17)
+                                                    // thisYearMonth = 2021-10-17
+
+
+
+
+
+}
+
+class A {
+
+  // Higher order function (функции высшего порядка)
+  def getCurrentYear(uncontract: LocalDate => (Int, Int, Int)): Int = {
+    uncontract(LocalDate.now)._1
+  }
+
+  def functionDate: LocalDate => (Int, Int, Int) = FunctionApp.toTuple
+
 }
