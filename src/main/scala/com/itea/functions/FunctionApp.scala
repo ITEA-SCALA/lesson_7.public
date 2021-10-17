@@ -113,13 +113,26 @@ object FunctionApp extends App {
   println( "asArrow = " + asArrow(2021)(10)(17) )   // TODO: а вот так вызывается функция которая возвращает другую функцию  asArrow(2021)(10)(17)
                                                     // asArrow = 2021-10-17
 
-  val thisYear: Int => Int => LocalDate = asArrow( LocalDate.now.getYear )
-  println( "thisYear = " + thisYear(10)(17) )       // TODO: а вот так вызывается функция которая возвращает другую функцию  thisYear(10)(17)
-                                                    // thisYear = 2021-10-17
+  val thisYearMonthDay: Int => Int => LocalDate  =  asArrow( LocalDate.now.getYear )
+  println( "thisYearMonthDay = " + thisYearMonthDay(10)(17) )  // TODO: а вот так вызывается функция которая возвращает другую функцию  thisYearMonthDay (10)(17)
+                                                               // thisYearMonthDay = 2021-10-17
 
-  val thisYearMonth: Int => LocalDate = asArrow(2021)(10)
-  println( "thisYearMonth = " + thisYearMonth(17) ) // TODO: а вот так вызывается функция которая возвращает другую функцию  thisYearMonth(17)
-                                                    // thisYearMonth = 2021-10-17
+  val thisYearThisMonthDay: Int => LocalDate  =  asArrow(2021)(10)  // а лучше так   asArrow (LocalDate.now.getYear)(LocalDate.now.getMonthValue)
+  println( "thisYearThisMonthDay = " + thisYearThisMonthDay(17) )   // TODO: а вот так вызывается функция которая возвращает другую функцию  thisYearThisMonthDay (17)
+                                                                    // thisYearThisMonthDay = 2021-10-17
+
+  /**
+   * 1. 'thisYearMonth2: Int => Int'  вот так, функция принимает Int и возвращает Int .......... thisYearMonth2 (10)
+   * 2. 'Int => LocalDate ='          а вот так, функция принимает Int и возвращает LocalDate .. thisYearMonth2 (10)(17)
+   */
+  val thisYearMonthDay2: Int => Int => LocalDate  =  thisYearMonthDay // TODO: функция пере использует другую функцию
+  println( "thisYearMonthDay2 = " + thisYearMonthDay2(10)(17) )       // thisYearMonthDay2 = 2021-10-17
+
+
+  val thisYearThisMonthDay2: Int => LocalDate  =  { day =>
+    thisYearMonthDay(LocalDate.now.getMonthValue)(day)                // TODO: функция пере использует другую функцию
+  }
+  println( "thisYearThisMonthDay2 = " + thisYearThisMonthDay2(17) )   // thisYearThisMonthDay2 = 2021-10-17
 
 
 
