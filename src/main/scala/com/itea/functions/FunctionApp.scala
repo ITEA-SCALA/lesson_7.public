@@ -2,6 +2,7 @@ package com.itea.functions
 
 import java.time.LocalDate
 import scala.concurrent.ExecutionContext
+import com.itea.utlis.math.min
 
 object FunctionApp extends App {
 
@@ -155,6 +156,10 @@ object FunctionApp extends App {
 
   // такой подход очень часто применяется во многих фреймворках для того чтобы работать асинхронно
   val clazz: A => CurriedClass = a => new CurriedClass("str")(a)
+
+
+  // ///
+  println( "min (10, 1) = " + min(10, 1) )
 
 
 }
