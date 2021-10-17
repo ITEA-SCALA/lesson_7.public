@@ -112,6 +112,16 @@ object FunctionApp extends App {
   val asArrow: Int => Int => Int => LocalDate  =  year => month => day => LocalDate.of (year, month, day)
   println( "asArrow = " + asArrow(2021)(10)(17) )   // TODO: а вот так вызывается функция которая возвращает другую функцию  asArrow(2021)(10)(17)
                                                     // asArrow = 2021-10-17
+  /**
+    TODO: Вот карри во всей красе:
+    - если вызвать функция так         asArrow (2021)(10)(17)  тогда функция вернет LocalDate
+    - но если убрать один параметр     asArrow (2021)(10)      тогда мы получим функцию от одного параметра
+    - а если убрать еще один параметр  asArrow (2021)          тогда мы получим функцию от двух параметров
+
+    TODO: А вот так функция-карри выглядит во время ее использования
+    asArrow(2021)(10)(17)
+    asArrow.apply(2021).apply(10).apply(17)
+   */
 
   val thisYearMonthDay: Int => Int => LocalDate  =  asArrow( LocalDate.now.getYear )
   println( "thisYearMonthDay = " + thisYearMonthDay(10)(17) )  // TODO: а вот так вызывается функция которая возвращает другую функцию  thisYearMonthDay (10)(17)
