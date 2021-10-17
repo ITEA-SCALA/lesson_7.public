@@ -10,7 +10,7 @@ object ErrorApp extends App {
    * Throwable
    *   Error -> AutoOfMemoryException...
    *   Exception
-   *     RuntimeException -> code error
+   *     RuntimeException -> TODO  code error  (в других языках, в частности и в Scala отсутствует обработка подобного рода Exception-ов...)
    *     Checked exception - handle it!
    */
 
@@ -47,5 +47,27 @@ object ErrorApp extends App {
     else 2 / i
   }
 
+  /**
+   * Validated:
+   * 1. библиотека от Cats-Validated  ...  https://typelevel.org/cats/datatypes/validated.html
+   * 2. библиотека от Wix-Accord  .......  https://wix.github.io/accord
+   */
+
+  case class User(age: Int, name: String)
+  // age >= 18
+  // name notEmpty
+
+  val validate: User => Either[List[String], User] = user => ???
+
+
+  type Validated[T] = Either[List[String], T]
+  val validate2: User => Validated[User] = user => ???
+
+
+  sealed trait Validated2[T] {
+    def isOK: Boolean = ???
+  }
+  case class Ok[T](t: T) extends Validated2[T]
+  case class Ko[T](inv: List[String]) extends Validated2[T]
 
 }
