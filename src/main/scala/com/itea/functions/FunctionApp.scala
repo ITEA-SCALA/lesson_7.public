@@ -1,6 +1,7 @@
 package com.itea.functions
 
 import java.time.LocalDate
+import scala.concurrent.ExecutionContext
 
 object FunctionApp extends App {
 
@@ -145,7 +146,15 @@ object FunctionApp extends App {
   println( "thisYearThisMonthDay2 = " + thisYearThisMonthDay2(17) )   // thisYearThisMonthDay2 = 2021-10-17
 
 
+  val a: A = new A()
+//  a.asDate (10)(1)    // можно писать в таких скобках
+//  a.asDate (10){ 1 }  // а еще можно писать и в таких скобках
+  a.asDate (10) { entity =>   // пример использования в Akka-HTTP...
+    entity
+  }
 
+  // такой подход очень часто применяется во многих фреймворках для того чтобы работать асинхронно
+  val clazz: A => CurriedClass = a => new CurriedClass("str")(a)
 
 
 }
@@ -159,4 +168,17 @@ class A {
 
   def functionDate: LocalDate => (Int, Int, Int) = FunctionApp.toTuple
 
+  // Curring
+//  def asDate(x: Int)(y: Int): Int = x + y
+  def asDate(x: Int)(y: Int => Int): Int = x + y(1)
+
 }
+
+// каррировать можно не только методы, но даже и конструкторы
+class CurriedClass(configStr: String)(a: A)
+
+// через каррирование обычно во всяких классах передается ExecutionContext
+class CurriedClass2(configStr: String)(implicit ec: ExecutionContext)
+
+// еще может применяться в DI   Repo => Service => Controller ...
+
