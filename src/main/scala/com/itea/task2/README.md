@@ -48,12 +48,18 @@
   нет необходимо реализовать специальные Exception-классы для модели бизнес-поведения...
 
 
+### Валидаторы и бесплатные монады в Scala
+
+* `Tutorial` https://dzone.com/articles/validation-for-free-in-scala
+* `Repo` https://github.com/michaelw123/validation
+
+Монадические сущности в Scala, такие как `Option`, `Try` и `Either`, очень удобны в использовании.
+
+Все популярные библиотеки Scala, такие как **scalaz** (`scalaz.Validation`) и **Cats** (`cats.data.Validated`), обеспечивают поддержку валидации приложений.
+
+
 ---
 
 [Шпаргалка по Markdown](https://github.com/sandino/Markdown-Cheatsheet)
 
 [Markdown-docs](https://gist.github.com/Jekins/2bf2d0638163f1294637)
-
-[Получить подчеркнутый текст с помощью Markdown](https://coderoad.ru/3003476/Получить-подчеркнутый-текст-с-помощью-Markdown)
-
-[Получить подчеркнутый текст с помощью Markdown (2)](https://coderoad.ru/44840416/Как-сделать-подчеркивание-слова-в-Markdown)
