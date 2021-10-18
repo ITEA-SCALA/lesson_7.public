@@ -30,5 +30,7 @@ libraryDependencies ++= Seq(
   "dev.optics" %% "monocle-macro" % "3.0.0", // only for Scala 2.13
 
   "org.scalatest" %% "scalatest" % "3.1.0",
-  "com.softwaremill.macwire" %% "macros" % "2.4.1" % "provided"
+  "com.softwaremill.macwire" %% "macros" % "2.4.1" % "provided",
+
+  "org.playframework.anorm" %% "anorm" % "2.6.10"
 )
