@@ -1,15 +1,10 @@
-package com.itea.task1
+package com.itea.task1.p01
 
 /**
- * @see http://aperiodic.net/phil/scala/s-99/
+ * Находим последний элемент списка
+ * @see http://aperiodic.net/phil/scala/s-99/p01.scala
  */
 object Application1 extends App {
-
-  /**
-   * @see http://aperiodic.net/phil/scala/s-99/p01.scala
-   *      P01 (*) Находим последний элемент списка.
-   */
-  // P01 (*) Find the last element of a list.
 
   val list: List[Int] = List(1, 1, 2, 3, 5, 8)
 //  println( list )
@@ -21,6 +16,15 @@ object Application1 extends App {
     list( index )
   }
   println( last(list, i => i-1) ) // 8
+
+  /*
+   * позволяет обрабатывать списки любого типа
+   * используем встроенные команды
+   */
+  def lastBuiltin[A](list: List[A]): A = list.last
+
+  println(
+    "lastBuiltin = " + lastBuiltin(List(1, 1, 2, 3, 5, 8)))
 
   //  ( инфиксные и постфиксные операции в Scala )
   def lastRecursive[T](ls: List[T]): T = ls match {

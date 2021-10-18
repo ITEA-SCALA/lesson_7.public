@@ -1,4 +1,4 @@
-package com.itea.s99.p05
+package com.itea.task1.p05
 
 /**
  * Перевернуть список

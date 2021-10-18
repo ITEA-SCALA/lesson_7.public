@@ -1,4 +1,4 @@
-package com.itea.s99.p07
+package com.itea.task1.p07
 
 /**
  * Сглаживает структуру вложенного списка

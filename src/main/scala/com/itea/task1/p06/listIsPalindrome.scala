@@ -1,4 +1,4 @@
-package com.itea.s99.p06
+package com.itea.task1.p06
 
 /**
  * Является ли список палиндромом
@@ -11,6 +11,8 @@ object ListIsPalindrome extends App {
   def isPalindrome[A](list: List[A]): Boolean = list == list.reverse
 
   println(
-    "isPalindrome = " + isPalindrome(List(1, 2, 3, 2, 1)))
+    "isPalindrome (true) = " + isPalindrome(List(1, 2, 3, 2, 1)))
+  println(
+    "isPalindrome (false) = " + isPalindrome(List(1, 2, 3, 4, 5)))
 
 }

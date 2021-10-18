@@ -1,4 +1,4 @@
-package com.itea.s99.p02
+package com.itea.task1.p02
 
 /**
  * Находим предпоследний элемент списка

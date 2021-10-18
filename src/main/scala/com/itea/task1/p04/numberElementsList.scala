@@ -1,4 +1,4 @@
-package com.itea.s99.p04
+package com.itea.task1.p04
 
 /**
  * Найдите количество элементов в списке
