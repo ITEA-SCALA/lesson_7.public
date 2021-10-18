@@ -17,13 +17,13 @@ object ErrorApp extends App {
   val i = 2
 
   // но так никто не пишет
-  try {
-    i / 0
-  } catch {
-    case IllegalArgumentException => println( "IAE" )
-    case ArrayIndexOutOfBoundsException => println( "AIOOBE" )
-  } finally {
-  }
+//  try {
+//    i / 0
+//  } catch {
+//    case IllegalArgumentException => println( "IAE" ) // class java.lang.IllegalArgumentException is not a value
+//    case ArrayIndexOutOfBoundsException => println( "AIOOBE" ) // class java.lang.ArrayIndexOutOfBoundsException is not a value
+//  } finally {
+//  }
 
   // лучше писать либо вот так
   def divideBy2(i: Int) = {
