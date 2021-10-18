@@ -1,7 +1,7 @@
 package com.itea.task1.p04
 
 /**
- * Найдите количество элементов в списке
+ * Найдите количество элементов в списке.
  * @see http://aperiodic.net/phil/scala/s-99/p04.scala
  */
 object NumberElementsList extends App {

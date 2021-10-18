@@ -1,7 +1,7 @@
 package com.itea.task1.p03
 
 /**
- * Находим K-й элемент списка
+ * Найдите K- й элемент списка.
  * @see http://aperiodic.net/phil/scala/s-99/p03.scala
  */
 object KElementList extends App {

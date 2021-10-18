@@ -1,7 +1,7 @@
 package com.itea.task1.p01
 
 /**
- * Находим последний элемент списка
+ * Найдите последний элемент списка
  * @see http://aperiodic.net/phil/scala/s-99/p01.scala
  */
 object Application1 extends App {

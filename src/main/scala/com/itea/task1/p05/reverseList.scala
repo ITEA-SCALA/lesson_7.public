@@ -1,7 +1,7 @@
 package com.itea.task1.p05
 
 /**
- * Перевернуть список
+ * Перевернуть список.
  * @see http://aperiodic.net/phil/scala/s-99/p05.scala
  */
 object ReverseList extends App {

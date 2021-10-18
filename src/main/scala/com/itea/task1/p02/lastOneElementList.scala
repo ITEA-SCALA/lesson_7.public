@@ -1,7 +1,7 @@
 package com.itea.task1.p02
 
 /**
- * Находим предпоследний элемент списка
+ * Найдите предпоследний элемент списка.
  * @see http://aperiodic.net/phil/scala/s-99/p02.scala
  */
 object LastOneElementList extends App {

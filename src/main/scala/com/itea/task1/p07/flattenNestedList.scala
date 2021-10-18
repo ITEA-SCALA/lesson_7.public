@@ -1,7 +1,7 @@
 package com.itea.task1.p07
 
 /**
- * Сглаживает структуру вложенного списка
+ * Сглаживание структуры вложенного списка.
  * @see http://aperiodic.net/phil/scala/s-99/p07.scala
  */
 object FlattenNestedList extends App {

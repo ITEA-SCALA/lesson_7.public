@@ -1,7 +1,7 @@
 package com.itea.task1.p06
 
 /**
- * Является ли список палиндромом
+ * Узнайте, является ли список палиндромом.
  * @see http://aperiodic.net/phil/scala/s-99/p06.scala
  */
 object ListIsPalindrome extends App {
