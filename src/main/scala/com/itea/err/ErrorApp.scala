@@ -10,7 +10,7 @@ object ErrorApp extends App {
    * Throwable
    *   Error -> AutoOfMemoryException...
    *   Exception
-   *     RuntimeException -> TODO  code error  (в других языках, в частности и в Scala отсутствует обработка подобного рода Exception-ов...)
+   *     RuntimeException -> TODO  code error  ('Unchecked exception' - в других языках, в частности и в Scala отсутствует обработка подобного рода Exception-ов...)
    *     Checked exception - handle it!
    */
 
