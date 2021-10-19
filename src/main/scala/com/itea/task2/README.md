@@ -59,6 +59,8 @@
 
 
 * `Akka HTTP rest-example` https://github.com/ITEA-SCALA/akka-http-rest-example
+* `Scala Play anorm-example` https://github.com/ITEA-SCALA/play-scala-anorm-example
+
 
 ---
 
