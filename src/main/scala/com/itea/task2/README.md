@@ -58,6 +58,8 @@
 Все популярные библиотеки Scala, такие как **scalaz** (`scalaz.Validation`) и **Cats** (`cats.data.Validated`), обеспечивают поддержку валидации приложений.
 
 
+* `Akka HTTP rest-example` https://github.com/ITEA-SCALA/akka-http-rest-example
+
 ---
 
 [Шпаргалка по Markdown](https://github.com/sandino/Markdown-Cheatsheet)
